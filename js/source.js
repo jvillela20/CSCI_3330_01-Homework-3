@@ -104,9 +104,43 @@ $(function () {
     $("#orders-amt").text(ordersAmt);
     $("#issues-amt").text(issuesAmt);
 
-
-
-       
-
-
+    sales.forEach(function (item){
+        $("#salesTableBody").append(`
+            <tr>
+                <td>${item.product}</td>
+                <td>${item.quantity}</td>
+                <td>${item.revenue}</td>
+            </tr>
+        `);
     });
+
+    activities.forEach(function (act){
+        $("#activity-list").append(`
+            <li>${act.message}</li>
+            `);
+    });
+
+    customers.forEach(function (cust){
+        $("#customerTableBody").append(`
+            <tr>
+                <td>${cust.name}</td>
+                <td>${cust.email}</td>
+                <td>${cust.status}</td>
+                <td>${cust.joined}</td>
+            </tr>
+        `);
+    });
+
+    messages.forEach(function(msg){
+        $("#system-status-list").append(`<li>${msg.messsage}</li>`)
+    });
+
+    notifications.forEach(function (notif){
+        $("#notifications-list").append(`<li>${notif.messsage}</li>`);
+    });
+
+    tasks.forEach(function (task){
+        $("#tasks-list").append(`<li>${task.messsage}</li>`);
+    });
+
+});
